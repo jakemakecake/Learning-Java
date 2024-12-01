@@ -1,13 +1,13 @@
 public class PracticeProblems {
-static int countOccurences(int[] arr, int n) {
-int count = 0;   
-for (int num : arr)
-if (num == n) {
-   count++;
-        } 
-return count;
+    static int countOccurences(int[] arr, int n) {
+        int count = 0;   
+        for (int num : arr) {
+            if (num == n) {
+                count++;
+            } 
+        }
+        return count;
     } 
-}
 
 
 
@@ -58,44 +58,6 @@ static int fib(int n) {
        return result; // Return the nth Fibonacci number
    }
 
-
-public class Point {
-       public final double x;
-       public final double y;
-  
-       // Constructor
-       public Point(double x, double y) {
-           this.x = x;
-           this.y = y;
-       }
-       public Point translateX(double t) {
-           return new Point(x + t, y);
-       }
-       public Point translateY(double t) {
-           return new Point(x, y + t);
-       }
-       public static Point centerOfMass(Point[] points){
-           if (points.length == 0){
-               return new Point (0, 0);
-           }
-           double sumX = 0;
-           double sumY = 0;
-
-
-           for (Point p : points) {
-               sumX += p.x;
-               sumY += p.y;
-           }
-      
-           double centerX = sumX / points.length;
-           double centerY = sumY / points.length;
-      
-           return new Point(centerX, centerY);
-       }
-
-
-       }
-
 public class point {
            public final double x;
            public final double y;
@@ -113,7 +75,7 @@ public double angle() {
 }
        }
 
-
+    }
 
 
 

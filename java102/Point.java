@@ -16,6 +16,7 @@ public double angle() {
 	return angleindegrees;
 }
 		}
+		
 	
 	
 
