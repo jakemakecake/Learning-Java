@@ -5,6 +5,7 @@ import java.util.ArrayList;
     public class Grid<T> {
         private final ArrayList<ArrayList<T>> grid;
         public final int sideLength;
+        private static int maxSideLength = 0; // Static field to track the maximum sideLength
     
         public Grid(int sideLength, T defaultVal) {
             this.sideLength = sideLength;
@@ -15,6 +16,14 @@ import java.util.ArrayList;
                     grid.get(i).add(defaultVal);
                 }
             }
+            if (sideLength > maxSideLength) {
+                maxSideLength = sideLength;
+            }
+        }
+    
+        // Maximum sideLength method
+        public static int maxSideLength() {
+            return maxSideLength;
         }
     
         public T get(int row, int col) {
@@ -23,6 +32,14 @@ import java.util.ArrayList;
     
         public void set(int row, int col, T val) {
             grid.get(row).set(col, val);
+        }
+
+        public ArrayList<T> diagonal() { // Diagonal
+            ArrayList<T> diagonal = new ArrayList<>();
+            for (int i = 0; i < sideLength; i++) {
+                diagonal.add(grid.get(i).get(i)); 
+            }
+            return diagonal;
         }
     
         @Override
@@ -38,3 +55,5 @@ import java.util.ArrayList;
         }
     }
 
+
+  
