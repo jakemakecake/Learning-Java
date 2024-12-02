@@ -1,16 +1,39 @@
-import java102.Grid;
-
+import java102.Circle;
+import java102.Point;
+import java102.Square;
+import java102.Shape;                            
 
 public class Main {
     public static void main(String[] args) {
-        Grid<Integer> grid1 = new Grid<>(3, 0);
-        System.out.println("Max side length: " + Grid.maxSideLength()); // Output: 3
-
-        Grid<Integer> grid2 = new Grid<>(5, 0);
-        System.out.println("Max side length: " + Grid.maxSideLength()); // Output: 5
-
-        Grid<Integer> grid3 = new Grid<>(4, 0);
-        System.out.println("Max side length: " + Grid.maxSideLength()); // Output: 5
+        Shape[] shapes = {new Circle(new Point(1.8, -20), 2), 
+            new Square(new Point(100, 2.1), 5.4),
+            new Circle(new Point(0, 0), 1),
+            new Circle(new Point(4, 9.123), 98.32),
+            new Square(new Point(-321, 0), 0.02)};
+        System.out.println(sumArea(shapes));
     }
+    static double sumArea(Shape[] shapes) {
+        double sum = 0;
+        for (Shape shape : shapes) {
+            sum += shape.area();
+        }
+
+        return sum;
+    }
+
+    static Shape[] scaleAll(Shape[] shapes, double k) {
+	Shape[] scaled = new Shape[shapes.length];
+	for (int i = 0; i < shapes.length; i++) {
+		scaled[i] = shapes[i].scale(k);
+	}
+	return scaled;
+    }
+
 }
-          
+
+
+
+      
+   
+
+         

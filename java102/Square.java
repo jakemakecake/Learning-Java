@@ -1,6 +1,6 @@
 package java102;
 
-public class Square {
+public class Square implements Shape {
     public final Point corner;
     public final double sideLength;
 
